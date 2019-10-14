@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+body {
+    font: 10pt '맑은 고딕', Tahoma, Arial;
+}
+
+.content {
+    width: 1024px;
+    margin: auto;
+}
+
+header.title {
+    border-bottom: 2px solid #777;
+}
+
+a:visited.normal,
+a:active.normal,
+a:link.normal {
+    color: initial;
+    text-decoration: none;
+}
