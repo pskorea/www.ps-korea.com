@@ -1,168 +1,314 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>코어브릿지</title>
-		
-		<style>
-@import "/css/style.css";
+    <head>
+        <meta charset="UTF-8">
+        <title>실습</title>
+        <style>
 
-header {
-    position: fixed; top: 0; right: 0; bottom: 200px; left: 0;
-    background: url(/img/title.jpg) center center no-repeat fixed;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding-top: 50px;
+            body {
+                background-image: url("/img/bg.jpg");
+                background-size: cover;
+                background-attachment: fixed;
+                margin: 0;
+                font-size: 12pt;
+                color: #ffffff;
+                display: flex;
+                flex-direction: column;
+                font-family: "맑은 고딕", Arial, Tahoma;
+
+            }
+
+            ul {
+                
+            }
+
+            div.layout ::content >li 
+            { ul {
+                list-style:none;
+                padding: 0;
+            }
+              
+            }
+
+            div.main {
+                height: 320px;
+                background-image: url("/img/lab.jpg");
+                background-size: cover;
+                background-position: center;
+  
+            }
+
+            header {
+                text-align: center;
+                padding: 40px;
+                font-size: 12pt;
+                position: sticky; top:0;
+                background-color:#ffffff;
+                color: #000000;
+                height: 40px;
+        
+            }
+
+            header ul {
+                display: flex; justify-content: space-around;
+                list-style: none;
+            }
+
+            header>ul>li {
+                flex: 1;
+            }
+
+            article {
+                background-image: url("/img/poly.jpg");
+                color: black;
+                margin: 40px 0 0 0;
+                height: 500px;
+                background-position:left;
+                
+            }
+
+            article>div {
+                display: flex;
+                list-style: none;
+            }
+
+            article div.image {
+                flex: 1;
+                padding: 200px 0 0 0;
+                display: flex; justify-content: center; align-items: center;
+            }
+
+            article div.content {
+                color:beige;
+                font-size: 1.2em;
+                font-family: "맑은고딕";
+                text-shadow: 2px 2px 5px black;
+                flex: 1;
+                padding: 170px 0 0 0;
+                list-style: none;
+                text-align: right;
+            }
+
+            article div.content>ol
+            { list-style: none;
+
+            }
+
+            aside {
+                 
+            }
+            
+            aside>.nothing {
+                height: 60%; width: 60%;
+                background-color: #ffffff;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-shadow: 2px 2px 2px #000000;
+                color:darkgreen;
+                font-size: 30pt;
+                text-align: center;
+                padding: 30px;
+                margin: 0 
+                }
+
+            aside img {
+                border: 10px solid #ffffff;
+                float: right;
+            }
+
+            aside>img {
+                
+            }
+
+            aside>img:nth-child(1) {
+                margin-right: 20px;
+            }
+
+            aside>img:nth-child(2) {
+                transform: rotate(-20deg);
+            }
+
+            aside>img:nth-child(3) {
+                transform: rotate(20deg);
+            }
+
+            .layout {
+                width: 1024px; margin: 0 auto;
+                height: 300px;
+                
+            }
+
+            .title {
+                background-image: url("/img/title.jpg");
+                background-size: cover;
+                background-position: bottom;
+                color: #ffffff;
+                text-shadow: 2px 2px 2px #000000;
+                font-size: 14pt;
+                height: 120px;
+                margin: 50px 0;
+            }
+
+            .filter {
+                background-color: rgba(0,0,0,0.1);
+                padding: 40px 0;
+            }
+            
+            .map {
+                display: flex;
+                padding: 30px 0;
+            }
+
+            .map>.info {
+                flex: 1;
+                margin: 50px 0;
+            }
+
+            .map>.kakao {
+                flex: 2;
+                color: initial;
+            }
+
+            footer {
+                background-color: #ffffff;
+                color: #000000;
+            }
+
+            footer >.layout {
+                padding: 40px;
+                display: flex;
+            }
+
+            footer ol {
+                flex: 1;
+            }
+
+            footer ol {
+                list-style: none; flex-direction: column;
+            }
+
+            table {
+                border: 1px solid #efefef;
 }
-
-section {
-    position: fixed; bottom: 0; right: 50%; left: 50%;
-    transform: translateX(-50%);
-    height: 400px;
-}
-
-article {
-    height: 200px;
-    display: flex;
-}
-
-article >div {
-    flex: 1;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 2em;
-}
-
-.request {
-    text-align: center;
-    background-color: rgba(0, 132, 255, 0.7);
-    color: #fff;
-}
-
-.location {
-    background: url(/img/location.png) no-repeat 90% 10%;
-    background-size: 50px;
-}
-
-.business {
-    background: url(/img/business.png) no-repeat 90% 50%;
-    background-size: 100px;
-}
-
-.style1 {
-    background-color: #eee;
-}
-
-.style1 :not(h2) {
-    color: #777;
-}
-
-.style2 {
-    display: flex; flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgba(128, 128, 128, 0.7);
-}
-
-.style2 h2,
-.style2 p {
-    color: #fff;
-}
-
-article h2 {
-    margin: 0;
-}
-
-header::before {
-    content: "";
-    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.icon {
-    background-color: #fff;
-    background-size: 100px;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.icon.polymer {
-    background-image: url(/img/polymer.png);
-}
-
-.icon.polymer2 {
-    background-image: url(/img/polymer2.png);
-}
-
-.icon.logo {
-    background-image: url(/img/logo.text.png);
-}
-
-.block {
-    display: block;
-    height: 100%;
-}
-
-        </style>
-    </head>
-    <body>
+            td, th {
+                padding: 10px;
+            }
+            
+            </style>
+                </head>
+                <body lang="kr">
         <header>
-            <h1 class="content">
-                <i>
-                    '피에스코리아(PS Korea)'는 각종 산업에 필요한 플라스틱 원료 및<br>
-                    일상 생활에 필요한 플라스틱 원료 뿐만 아니라<br>
-                    R&D용 플라스틱 원료를 공급하고 있습니다.<br>
-                    더 나아가 플라스틱 원료 및 가공에 필요한 기술지원도 함께 하고 있습니다.
-                </i>
-            </h1>
+                <ul class="layout">
+                <li><a href="#company">ABOUT US</a></li>
+                <li>SUPPORT</li>
+                <li>PRODUCTS </li>
+                <li>LOCATION</li>
+                </ul>
+        
         </header>
-        <section class="content">
-            <article>
-                <div class="request">
-                    <img src="/img/call.png" width="50" height="50">
-                    <p>견적문의/상담</p>
-                    <h1>sales@ps-korea.com</h1>
+                <div class="main"></div>
+                <div class="title">
+                <div class="filter">
+                <p class="layout">
+                    PS KOREA produces plastic raw materials for various industries and plastic raw materials for daily life 
+                    as well as plastic raw materials for R&D. 
+                    Furthermore, we provide technical support for plastic raw materials and processing.
+                </p>
+            </div>
+        </div>
+        <aside>
+            <img src="/img/bottles.jpg" width="310">
+            <img src="/img/lego.jpg" width="310">
+            <img src="/img/title.jpg" width="310">
+            <div class="nothing">
+                <ol>
+                All life is an experiment. 
+                <br> And WE will be there for you. 
+                </ol>
+            </div>
+        </aside> 
+        <article>
+            <div class="layout">
+                <div class="image">
+                    <div>
+                        <img width="500" height="300" src="/img/str.jpg">
+                    </div>
                 </div>
-                <div class="about style2">
-                    <a _href="company.html" class="normal block">
-                        <h2>About</h2>
-                        <p>회사소개</p>
-                    </a>
+                <div class="content">
+                    <ol>
+                        <li> PS KOREA produces plastic raw materials for various industries and plastic raw materials for daily life
+                             as well as plastic raw materials for R&D. 
+                             Furthermore, we provide technical support for plastic raw materials and processing. </li>
+                    </ol>
                 </div>
-                <div class="icon polymer"></div>
-                <div class="location style1">
-                    <a _href="map.html" class="normal block">
-                        <h2>Location</h2>
-                        <span>
-                            찾아오시는길
-                        </span>
-                        <p>
-                            경기도 화성시 동탄대로 24길 199, 475-802
-                        </p>
-                    </a>
-                </div>
-            </article>
-            <article>
-                <div class="style2">
-                    <a _href="product.html" class="normal block">
-                        <h2>Product</h2>
-                        <p>주요제품</p>
-                    </a>
-                </div>
-                <div class="icon polymer2"></div>
-                <div class="business style1">
-                    <a _href="/business.html" class="normal block">
-                        <h2>Business</h2>
-                        <span>사업분야</span>
-                        <p>
+            </div>
+        </article>
+        <div class="map layout">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th>회사명</th>
+                        <td>주식회사 피에스코리아</td>
+                    </tr>
+                    <tr>
+                        <th>대표이사</th>
+                        <td>이호연</td>
+                    </tr>
+                    <tr>
+                        <th>연락처</th>
+                        <td>010-1234-5678</td>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <td>경기도 안양시 평촌동</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="kakao" id="yeji"></div>
+        </div>
+        
+        
+        <footer id="company">
+           <div class="layout">
+                <ol>
+                    <li><b>COMPANY</b></li>
+                    <li><br>ABOUT US</li>
+                    <li>ABOUT US</li>
+                </ol>
+                <ol>
+                    <li>PARTNERSHIP</li>
+                    </ol>
+                <ol>
+                    <li>ONLINE COMMUNITY</li>
+                    </ol>
+                <ol>
+                    <li>RECRUIT</li>
+                    </ol>
+           </div>
+        </footer>
+        <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2d5f1506a806e98b9b51ecb765853bd7"></script>
+        <script>
+try {
+    const
+        pos = new kakao.maps.LatLng(37.3965365395623, 126.966121951265),
+        map = new kakao.maps.Map(document.getElementById("yeji"), {
+            center: pos,
+            level: 3
+        }),
+        marker = new kakao.maps.Marker({
+            position: pos,
+            clickable: false
+        }),
+        title = new kakao.maps.InfoWindow({
+            position : pos,
+            content : "<label>주식회사 피에스코리아<br>경기도 안양시 동안구 시민대로 327번길 7 대명글로벌비즈스퀘어 501</label>;"
+        });
 
-                        </p>
-                    </a>
-                </div>
-                <div class="icon logo"></div>
-            </article>
-        </section>
+        marker.setMap(map);
+
+        title.open(map, marker);
+} catch (e) {console.trace(e);
+    throw "kakao.maps.Map exception";
+}
+        </script>
     </body>
 </html>
