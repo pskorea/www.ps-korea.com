@@ -12,7 +12,6 @@ body {
     background-attachment: fixed;
     margin: 0;
     font-size: 10pt;
-    color: #ffffff;
     display: flex;
     flex-direction: column;
     font-family: "맑은 고딕", Arial, Tahoma;
@@ -23,13 +22,7 @@ h1 {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
     padding: 80px 0 80px 0;
-}
-
-div.layout .content ol {
-    list-style:none;
-    padding: 0;
-    font-size: 1.25em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
 }
 
 div.main {
@@ -98,39 +91,32 @@ header>ul {
     display: flex;
 }
 
+.container.center {
+    justify-content: center;
+}
+
 article {
     background-image: url("/img/poly.jpg");
-    color: black;
+    font-family: 나눔고딕;
+    color: darkgreen;
     margin: 40px 0 0 0;
     padding: 50px 0;
-}
-
-article>div {
-    display: flex;
-}
-
-article div.image {
-    flex: 1;
-    display: flex; justify-content: center; align-items: center;
-}
-
-article div.content {
-    color:beige;
     font-size: 1.2em;
-    font-family: "맑은고딕";
-    text-shadow: 2px 2px 5px black;
-    flex: 1;
-    display: flex; align-items: center;
-    padding-left: 70px;
+}
+
+article img {
+    float: left;
+    margin: 30px;
+}
+
+article h2 {
+    color:rgb(112, 30, 15)
 }
 
 ol {
     list-style: none;
 }
 
-aside {
-        
-}
 
 aside>.nothing {
     height: 60%; width: 60%;
@@ -147,10 +133,6 @@ aside>.nothing {
 aside img {
     border: 10px solid #ffffff;
     float: right;
-}
-
-aside>img {
-    
 }
 
 aside>img:nth-child(1) {
@@ -189,16 +171,9 @@ aside>img:nth-child(3) {
     padding: 80px 0;
 }
 
-.box {
+.explain {
     background-image: url(/Test/img/tex3.jpg);
     margin: 70px 0 0 0;
-}
-
-.explain {
-    text-align: center;
-    color:#000000;
-    padding: 30px 0 0 0;
-    margin: 80px 0 0 0;
 }
 
 .click {
@@ -216,6 +191,7 @@ aside>img:nth-child(3) {
 }
 
 .products {
+    /*flex: 1;*/
     margin: 0 1em;
 }
 
@@ -227,29 +203,35 @@ aside>img:nth-child(3) {
     font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif
 }
 
-.products>a {
+.products .link {
     display: block;
     width: 250px; height: 250px;
     background-image: url(/img/bottles.jpg);
     background-size: cover;
     margin: 0 0 30px 0;
     border: lightgrey 5px solid;
+    position: relative;
 }
 
-.products:nth-child(1)>a {
+.products .link>ul {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.products:nth-child(1) .link {
     background-image: url(/Test/img/p1.png);
 }
 
-.products:nth-child(2)>a {
+.products:nth-child(2) .link {
     background-image: url(/Test/img/wm.jpg); 
     background-position: center;
 }
 
-.products:nth-child(3)>a {
+.products:nth-child(3) .link {
     background-image: url(/Test/img/medi2.jpg);
 }
 
-.products:nth-child(4)>a {
+.products:nth-child(4) .link {
     background-image: url(/Test/img/green.jpg);
 }
 
@@ -349,14 +331,6 @@ aside>img:nth-child(3) {
     margin: 0 20px 40px 20px;
 }
 
-/*.service.a::before {
-    pointer-events: none;
-    content: "";
-    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-    background: url(/Test/img/inv.jpg) no-repeat 100px center;
-    background-size: 100px;
-}*/
-
 .service.b {
     color: #000000;
     background-color: white;
@@ -422,7 +396,7 @@ aside>img:nth-child(3) {
     transform: translateY(0);
 }
 
-p {
+.service.c p {
     word-break: break-all;
     white-space: pre-line;
 }
@@ -444,6 +418,12 @@ footer ol {
 footer ol {
     list-style: none; flex-direction: column;
 }
+
+footer li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 
 table {
     border: 2px solid #efefef;
@@ -469,26 +449,34 @@ a:active {
             <body>
                 <header>
                     <ul class="layout">
-                        <li>
-                            <a href="#company">
-                                ABOUT US
-                            </a>
+                        <li class="container">
+                            <a href="#company">ABOUT US</a>
+                            <div class="popup">
+                                <ul>
+                                    <li>
+                                        <a href="#nothing">INFORMATION</a>
+                                    </li>
+                                    <li>
+                                        <a href="#about">LOCATION</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="container">
                             <a href="#explain">PRODUCTS</a>
                             <div class="popup">
                                 <ul>
                                     <li>
-                                        AUTOMOTIVE
+                                        <a href="#explain">AUTOMOTIVE</a>
                                     </li>
                                     <li>
-                                        ELECTRONIC
+                                        <a href="#explain">ELECTRONIC</a>
                                     </li>
                                     <li>
-                                        MEDICAL
+                                        <a href="#explain">MEDICAL</a>
                                     </li>
                                     <li>
-                                        BIODEGRADABLE
+                                        <a href="#explain">BIODEGRADABLE</a>
                                     </li>
                                 </ul>
                             </div>
@@ -498,17 +486,26 @@ a:active {
                             <div class="popup">
                                 <ul>
                                     <li>
-                                            R&D SUPPORTS
+                                        <a href="#help">R&D SUPPORTS</a>
                                     </li>
                                     <li>
-                                        PATENT SERVICE
+                                        <a href="#service_2">PATENT SERVICE</a>
                                     </li>
-                                    <li>PLASTIC PROCESSING SUPPORTS
+                                    <li>
+                                        <a href="#service_3">PLASTIC PROCESSING SUPPORTS</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#news">NEWSROOM</a>
+                        <li class="container">
+                            <a href="#help">NEWSROOM</a>
+                            <div class="popup">
+                                <ul>
+                                    <li>
+                                        <a href="#room">UPDATES ABOUT PLASTIC</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </header>
@@ -516,13 +513,9 @@ a:active {
                 <div class="title">
                     <div class="filter">
                         <p class="layout">
-                            PS KOREA produces plastic raw materials for various industries and plastic raw materials for daily life 
-                            as well as plastic raw materials for R&D. 
+                            PS KOREA produces plastic raw materials for various industries and plastic raw materials 
+                            for daily life as well as plastic raw materials for R&D. 
                             Furthermore, we provide technical support for plastic raw materials and processing.
-                            <span class="kr">
-                                PS KOREA는 다양한 산업 분야의 플라스틱 원료와 일상 생활용 플라스틱 원료 및 R & D 용 플라스틱 원료를 생산하고
-                                플라스틱 원료 및 가공에 대한 기술 지원을 제공합니다.
-                            </span>
                         </p>
                     </div>
                 </div>
@@ -530,7 +523,7 @@ a:active {
                     <img src="/img/bottles.jpg" width="310">
                     <img src="/img/lego.jpg" width="310">
                     <img src="/img/title.jpg" width="310">
-                    <div class="nothing">
+                    <div class="nothing" id="nothing">
                         <ol>
                             <li>New Solutions for Plastic Industry, </li>
                             <li>PS KOREA </li>
@@ -539,41 +532,59 @@ a:active {
                 </aside>
                 <article>
                     <div class="layout">
-                        <div class="image">
-                            <div>
-                                <img width="500" height="300" src="/img/str.jpg">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <ol>
-                                <li> PS KOREA produces plastic raw materials for various industries and plastic raw materials for daily life
-                                    as well as plastic raw materials for R&D. 
-                                    Furthermore, we provide technical support for plastic raw materials and processing. </li>
-                            </ol>
-                        </div>
+                        <img height="300" src="/img/str.jpg">
+                        <h2>PS KOREA ?</h2>
+                        <p><h4>
+                            급변하는 산업 환경 속에서 플라스틱은 현대의 산업 발전에 커다란 역할을 해왔습니다.
+                        </p>
+                        <p>
+                            자동차 및 전기, 전자 뿐만 아니라 항공 우주 산업까지, 플라스틱의 다양한 적용은 현대 산업 사회의 발전과 그 방향을 같이하고 있습니다. 
+                            최근 '미세 플라스틱' 등의 환경 이슈로 인해, 플라스틱의 무용론이 제기되고 있긴 하지만, 플라스틱은 현대 산업 사회에서 반드시 필요한 소재가 틀림없습니다.
+                        </p>
+                        <p>    
+                            이러한 산업 사회의 요구 사항와 고민을 미리 파악하여, 고객에게 최상의 솔루션을 제공하고자 PS KOREA 가 탄생하게 되었으며, 
+                            늘 고객과 함께 고민하고,
+                            함께 노력하는 회사가 되겠습니다.
+                        </p>
+                            국내의 플라스틱 원료 뿐만 아니라, 해외 유수의 글로벌 화학회사들의 플라스틱 원재료를 공급해 드림으로써, 고객에게는 최고의 품질로 대응해 드릴 것이며, 
+                            대학원생들을 비롯한 R&D 부문에 계신 분들께는 연구 활동에 부족함이 없도록 적극적인 지원을 아끼지 않겠습니다. 
+                        <p>
+                            또한, 플라스틱 가공 관련해서, 소재의 특성을 고려한 가공 조건들에 대한 가이드라인을 제공해 드림으로써 고객과 피에스코리아 간의 Win-Win의 성공 모델을 만드는데 최선을 다해 노력하겠습니다.
+                        </p>
+                        <p>
+                            피에스코리아의 '열정'과 '성실'이 여러 고객분들과 함께 한다면, 고객분들의 미래는 지금보다 훨씬 더 밝아질 거라 확신합니다. 감사합니다.
+                        </h4></p>
                     </div>
                 </article>
-<div class="box">
-                <div class="explain" id="explain">
-                    <h1>P R O D U C T S</h1>
-                </div>
-                <div class="click" id="products">
-                    <div class="products">
-                        <a href="#about" title="알아보기"></a>
-                        <h5>AUTOMOTIVE</h5>
-                    </div>
-                    <div class="products">
-                        <a href="#about" title="알아보기"></a>
-                        <h5>ELECTRONIC </h5>
-                    </div>
-                    <div class="products">
-                        <a href="#about" title="알아보기"></a>
-                        <h5>MEDICAL</h5>
-                    </div>
-                    <div class="products">
-                        <a href="#about" title="알아보기"></a>
-                        <h5>BIODEGRADABLE</h5>
-</div>
+                <div class="explain">
+                    <h1 id="explain">P R O D U C T S</h1>
+                    <div class="container flex center">
+                        <div class="products click" id="products">
+                            <div class="link" title="알아보기">
+                                <ul>
+                                    <li>
+                                        <a href="#nothing">INFORMATION</a>
+                                    </li>
+                                    <li>
+                                        <a href="#about">LOCATION</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h5>AUTOMOTIVE</h5>
+                        </div>
+                    
+                        <div class="products">
+                            <div class="link" title="알아보기"></div>
+                            <h5>ELECTRONIC </h5>
+                        </div>
+                        <div class="products">
+                            <div class="link" title="알아보기"></div>
+                            <h5>MEDICAL</h5>
+                        </div>
+                        <div class="products">
+                            <div class="link" title="알아보기"></div>
+                            <h5>BIODEGRADABLE</h5>
+                        </div>
                     </div>
                 </div>
 <div class="mask">
@@ -660,13 +671,10 @@ a:active {
                                 <img src="/Test/img/n3.png" width="400" height="240">
                             </a>
                             <h2>
-                                BASF:   BASF’s Ultrason® enables new series of dishes and bowls from plastics manufacturer Daiwa for Japanese schools
+                                BASF:   BASF’s PPSU techniques for food containers enable Japanese schools have better dishes and bowls
                             </h2>
                             <p>
-                                BASF’s PPSU extends the Daiwa School Ware series with food containers that are light, easy to clean,
-                                highly hydrolysis, chemically and heat resistant, hard-to-break and good-looking 
-                                – all features that are needed for containers used in catering services.
-                                BASF의 PPSU 
+                                BASF의 PPSU 기술은 일본의 학교가 더 가볍고 청결유지가 쉬우며 더 안성맞춤인 음식보관이 가능한 컨테이너를 만드는 데에 큰 기여를 하였습니다.
                             </p>
                         </div>
                         <div class="news d" id="news_d">
@@ -677,7 +685,7 @@ a:active {
                                 EXXONMOBIL:   Sustainability Report
                             </h2>
                             <p>
-                                The Sustainability Report describes ExxonMobil’s efforts regarding environmental, social and governance performance.
+                                ExxonMobil의 수용가능성 조사 리포트는 기업이 환경적으로, 사회적으로, 그리고 정부적으로 어떻게 기여했는지 묘사합니다.
                             </p>
                         </div>
                 </div>
@@ -725,20 +733,20 @@ a:active {
                         </div>
                         <div class="kakao" id="yeji"></div>
                     </div>
-                </div>                     
+                </div>    
                 <footer id="company">
                 <div class="layout">
                         <ol>
                             <li>
-                                <a href="#comopany">
-                                    <h3>COMPANY</h2>
+                                <a href="#title">
+                                    <h3>COMPANY</h3>
                                 </a>
                             </li>
                             <li>
-                                <a href="#comopany">ABOUT US</a>
+                                <a href="#nothing">ABOUT US</a>
                             </li>
                             <li>
-                                <a href="#comopany">LOCATION</a>
+                                <a href="#about">LOCATION</a>
                             </li>
                         </ol>
                         <ol>
