@@ -64,7 +64,7 @@ header>ul {
     overflow: visible;
 }
 
-.popup {
+.container .popup {
     position: absolute; top: 100%; left: 0;
     background-color: beige;
     padding: 1em;
@@ -73,12 +73,12 @@ header>ul {
     white-space: nowrap;
 }
 
-.popup>ul {
+.container .popup>ul {
     list-style: none;
     padding: 0;
 }
 
-.popup li:hover {
+.container .popup li:hover {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -116,7 +116,6 @@ article h2 {
 ol {
     list-style: none;
 }
-
 
 aside>.nothing {
     height: 60%; width: 60%;
@@ -174,25 +173,21 @@ aside>img:nth-child(3) {
 .explain {
     background-image: url(/Test/img/tex3.jpg);
     margin: 70px 0 0 0;
-}
-
-.click {
     text-align: center;
-    display: flex; justify-content: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 15pt;
-    padding: 50px 0 90px 0;
-    color: #000000;
-}
-
-.click a:hover {
-    transform: scale(1.2);
-    transition: transform .2s cubic-bezier(0.5, 3, 1, 1);
 }
 
 .products {
-    /*flex: 1;*/
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15pt;
+    padding: 50px 0 90px 0;
     margin: 0 1em;
+    color: #000000;
+}
+
+.products .link:hover {
+    transform: scale(1.2);
+    transition: transform .2s cubic-bezier(0.5, 3, 1, 1);
 }
 
 .help {
@@ -213,9 +208,19 @@ aside>img:nth-child(3) {
     position: relative;
 }
 
-.products .link>ul {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+.products .link .popup {
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    display: none;
+}
+
+.products .link:hover .popup {
+    display: flex; align-items: center; justify-content: center;
+}
+
+.products .link a {
+    display: block;
 }
 
 .products:nth-child(1) .link {
@@ -285,7 +290,6 @@ aside>img:nth-child(3) {
 .news {
     text-align: center;
     color:#000000;
-    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif
 }
 
 .room {
@@ -293,7 +297,7 @@ aside>img:nth-child(3) {
     padding: 0;
     flex: 1;
     color:#000000;
-    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif
+    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif, "나눔 고딕";
 }
 
 .room p {
@@ -440,8 +444,8 @@ td, th {
 a:visited,
 a:link,
 a:active {
-    color: initial;
-    text-decoration: initial;
+    color: inherit;
+    text-decoration: inherit;
 }
 
         </style>
@@ -559,30 +563,49 @@ a:active {
                 <div class="explain">
                     <h1 id="explain">P R O D U C T S</h1>
                     <div class="container flex center">
-                        <div class="products click" id="products">
+                        <div class="products" id="products">
                             <div class="link" title="알아보기">
-                                <ul>
-                                    <li>
+                                <div class="popup">
+                                    <div>
                                         <a href="#nothing">INFORMATION</a>
-                                    </li>
-                                    <li>
                                         <a href="#about">LOCATION</a>
-                                    </li>
-                                </ul>
+                                    </div>
+                                </div>
                             </div>
                             <h5>AUTOMOTIVE</h5>
                         </div>
                     
                         <div class="products">
-                            <div class="link" title="알아보기"></div>
+                            <div class="link" title="알아보기">
+                                <div class="popup">
+                                    <div>
+                                        <a href="#nothing">INFORMATION</a>
+                                        <a href="#about">LOCATION</a>
+                                    </div>
+                                </div>
+                            </div>
                             <h5>ELECTRONIC </h5>
                         </div>
                         <div class="products">
-                            <div class="link" title="알아보기"></div>
+                            <div class="link" title="알아보기">
+                                <div class="popup">
+                                    <div>
+                                        <a href="#nothing">INFORMATION</a>
+                                        <a href="#about">LOCATION</a>
+                                    </div>
+                                </div>
+                            </div>
                             <h5>MEDICAL</h5>
                         </div>
                         <div class="products">
-                            <div class="link" title="알아보기"></div>
+                            <div class="link" title="알아보기">
+                                <div class="popup">
+                                    <div>
+                                        <a href="#nothing">INFORMATION</a>
+                                        <a href="#about">LOCATION</a>
+                                    </div>
+                                </div>
+                            </div>
                             <h5>BIODEGRADABLE</h5>
                         </div>
                     </div>
