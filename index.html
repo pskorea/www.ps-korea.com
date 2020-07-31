@@ -6,16 +6,15 @@
         <style>
 
 body {
-    background-image: url("/Test/img/cn.jpg");
+    background-image: url("/img/cn.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     margin: 0;
     font-size: 10pt;
-    color: #ffffff;
     display: flex;
     flex-direction: column;
-    font-family: "맑은 고딕", Arial, Tahoma;
+    font-family: "맑은 고딕", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
@@ -23,19 +22,13 @@ h1 {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
     padding: 80px 0 80px 0;
-}
-
-div.layout .content ol {
-    list-style:none;
-    padding: 0;
-    font-size: 1.25em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
 }
 
 div.main {
     display: none;
     height: 400px;
-    background-image: url("/Test/img/lab.jpg");
+    background-image: url("/img/lab.jpg");
     background-position: center;
     background-size: cover;
 
@@ -46,7 +39,7 @@ header {
     padding: 40px;
     font-size: 13pt;
     background-color:#ffffff;
-    background-image: url("/Test/img/lab.jpg");
+    background-image: url("/img/lab.jpg");
     background-position: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #000000;
@@ -57,7 +50,7 @@ header::before {
     pointer-events: none;
     content: "";
     position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-    background: url(/Test/img/logo.png) no-repeat 100px top;
+    background: url(/img/logo.png) no-repeat 100px top;
     background-size: 130px;
 }
 
@@ -71,7 +64,7 @@ header>ul {
     overflow: visible;
 }
 
-.popup {
+.container .popup {
     position: absolute; top: 100%; left: 0;
     background-color: beige;
     padding: 1em;
@@ -80,12 +73,12 @@ header>ul {
     white-space: nowrap;
 }
 
-.popup>ul {
+.container .popup>ul {
     list-style: none;
     padding: 0;
 }
 
-.popup li:hover {
+.container .popup li:hover {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -98,39 +91,36 @@ header>ul {
     display: flex;
 }
 
+.container.center {
+    justify-content: center;
+}
+
 article {
     background-image: url("/img/poly.jpg");
-    color: black;
+    font-family: "맑은고딕", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: darkgreen;
     margin: 40px 0 0 0;
     padding: 50px 0;
-}
-
-article>div {
-    display: flex;
-}
-
-article div.image {
-    flex: 1;
-    display: flex; justify-content: center; align-items: center;
-}
-
-article div.content {
-    color:black;
     font-size: 1.2em;
-    font-family: "맑은고딕";
-    display: flex; align-items: left;
-    padding-left: 70px;
+}
+
+article img {
+    float: left;
+    margin: 30px;
+}
+
+article h2 {
+    color:rgb(112, 30, 15)
 }
 
 ol {
     list-style: none;
 }
 
-
 aside>.nothing {
     height: 60%; width: 60%;
     background-color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-shadow: 0px 2px 2px #aaaaaa;
     color:darkgreen;
     font-size: 30pt;
@@ -157,7 +147,7 @@ aside>img:nth-child(3) {
 }
 
 .layout {
-    width: 1024px; margin: 0 auto;                
+    width: 1024px; margin: 0 auto;           
 }
 
 .title {
@@ -168,7 +158,7 @@ aside>img:nth-child(3) {
     text-shadow: 2px 2px 2px #000000;
     font-size: 15pt;
     margin: 50px 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .filter {
@@ -180,73 +170,79 @@ aside>img:nth-child(3) {
     padding: 80px 0;
 }
 
-.box {
-    background-image: url(/Test/img/tex3.jpg);
-    margin: 70px 0 0 0;
-}
-
 .explain {
+    background-image: url(/img/tex3.jpg);
+    margin-top: 70px;
     text-align: center;
-    color:#000000;
-    padding: 30px 0 0 0;
-    margin: 80px 0 0 0;
 }
 
-.click {
+.products {
     text-align: center;
-    display: flex; justify-content: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 15pt;
-    padding: 50px 0 90px 0;
+    padding: 70px 0 90px 0;
+    margin: 0 1em;
     color: #000000;
 }
 
-.click a:hover {
+.products .link:hover {
     transform: scale(1.2);
     transition: transform .2s cubic-bezier(0.5, 3, 1, 1);
 }
 
-.products {
-    margin: 0 1em;
-}
-
 .help {
-    margin: 30px 0;
+    margin: 0;
     text-align: center;
     color:#ffffff;
     padding: 20px;
-    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif
+    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif;
 }
 
-.products>a {
+.products .link {
     display: block;
     width: 250px; height: 250px;
     background-image: url(/img/bottles.jpg);
     background-size: cover;
     margin: 0 0 30px 0;
     border: lightgrey 5px solid;
+    position: relative;
 }
 
-.products:nth-child(1)>a {
-    background-image: url(/Test/img/p1.png);
+.products .link .popup {
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    display: none;
 }
 
-.products:nth-child(2)>a {
-    background-image: url(/Test/img/wm.jpg); 
+.products .link:hover .popup {
+    display: flex; align-items: center; justify-content: center;
+}
+
+.products .link a {
+    display: block;
+}
+
+.products:nth-child(1) .link {
+    background-image: url(/img/p1.png);
+}
+
+.products:nth-child(2) .link {
+    background-image: url(/img/wm.jpg); 
     background-position: center;
 }
 
-.products:nth-child(3)>a {
-    background-image: url(/Test/img/medi2.jpg);
+.products:nth-child(3) .link {
+    background-image: url(/img/medi2.jpg);
 }
 
-.products:nth-child(4)>a {
-    background-image: url(/Test/img/green.jpg);
+.products:nth-child(4) .link {
+    background-image: url(/img/green.jpg);
 }
 
 .service {
-    background-image: url(/Test/img/paper1.jpg);
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, "맑은 고딕";
+    background-image: url(/img/paper1.jpg);
+    font-family:'Lucida Sans Unicode', '맑은고딕';
     text-shadow: 0px 2px 2px #aaaaaa;
     color:#000000;
     padding: 30px;
@@ -288,13 +284,13 @@ aside>img:nth-child(3) {
 }
 
 .newbg {
-    background-image: url(/Test/img/paper2.jpg);
+    background-image: url(/img/paper2.jpg);
 }
 
 .news {
     text-align: center;
     color:#000000;
-    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif
+    font-family: 'Lucida Sans Unicode', '맑은고딕';
 }
 
 .room {
@@ -302,7 +298,7 @@ aside>img:nth-child(3) {
     padding: 0;
     flex: 1;
     color:#000000;
-    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif
+    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif, "맑은 고딕";
 }
 
 .room p {
@@ -339,14 +335,6 @@ aside>img:nth-child(3) {
 .news.d {
     margin: 0 20px 40px 20px;
 }
-
-/*.service.a::before {
-    pointer-events: none;
-    content: "";
-    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-    background: url(/Test/img/inv.jpg) no-repeat 100px center;
-    background-size: 100px;
-}*/
 
 .service.b {
     color: #000000;
@@ -413,23 +401,15 @@ aside>img:nth-child(3) {
     transform: translateY(0);
 }
 
-p {
+.service.c p {
     word-break: break-all;
     white-space: pre-line;
-}
-
-.collabs {
-    text-align: center;
-    color:white;
-    font-size: 1.25em;
-    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif
-    padding: 30px 0 0 0;
-    margin-bottom: 80px;
 }
 
 footer {
     background-color: #ffffff;
     color: #000000;
+    font-family: 'Lucida Sans Unicode';
 }
 
 footer >.layout {
@@ -459,21 +439,47 @@ td, th {
     padding: 10px;
 }
 
-.kr {
-    font-size: 0.9em;
+select[name=lang] {
+    position: absolute; right: 1em;
+    padding: 0.5em;
 }
 
 a:visited,
 a:link,
 a:active {
-    color: initial;
-    text-decoration: initial;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+p:lang(en) {
+    font: 13pt 'Lucida Sans Unicode';
+}
+
+p:lang(kr) {
+    font: 13pt '맑은고딕';
+}
+
+body.kr :lang(en).lang,
+body.en :lang(kr).lang {
+    display: none;
+}
+
+.byme {
+    text-align: center;
+    margin: 50px 0 50px 0;
+    font-family: '나눔고딕';
+    font-size: 5pt;
+    color: grey;
 }
 
         </style>
             </head>
-            <body>
+            <body class="kr">
                 <header>
+                    <select name="lang">
+                        <option value="kr" selected>한국어</option>
+                        <option value="en">English</option>
+                    </select>
                     <ul class="layout">
                         <li class="container">
                             <a href="#company">ABOUT US</a>
@@ -484,9 +490,6 @@ a:active {
                                     </li>
                                     <li>
                                         <a href="#about">LOCATION</a>
-                                    </li>
-                                    <li>
-                                        <a href="#company">COLLABORATION</a>
                                     </li>
                                 </ul>
                             </div>
@@ -527,11 +530,11 @@ a:active {
                             </div>
                         </li>
                         <li class="container">
-                            <a href="#help">NEWSROOM</a>
+                            <a href="#news">NEWSROOM</a>
                             <div class="popup">
                                 <ul>
                                     <li>
-                                        <a href="#room">UPDATES ABOUT PLASTIC</a>
+                                        <a href="#news">WHAT's UP IN CHEMICAL INDUSTRY</a>
                                     </li>
                                 </ul>
                             </div>
@@ -554,53 +557,109 @@ a:active {
                     <img src="/img/title.jpg" width="310">
                     <div class="nothing" id="nothing">
                         <ol>
-                            <li>New Solutions for Plastic Industry, </li>
+                            <li>New Solution for Plastic Industry, </li>
                             <li>PS KOREA </li>
                         </ol>
                     </div>
                 </aside>
                 <article>
                     <div class="layout">
-                        <div class="image">
-                            <div>
-                                <img width="300" height="200" src="/img/str.jpg">
-                            </div>
-                        </div>
-                        <div class="content" id="content">
+                        <img height="300" src="/img/str.jpg">
+                        <h2>PS KOREA ?</h2>
+                        <div lang="kr" class="lang">
                             <p>
-                                급변하는 산업 환경 속에서 플라스틱은 현대의 산업 발전에 커다란 역할을 해왔습니다. 
-                                자동차 및 전기, 전자 뿐만 아니라 항공 우주 산업까지, 플라스틱의 다양한 적용은 현대 산업 사회의 발전과 그 방향을 같이하고 있습니다. 
+                                급변하는 산업 환경 속에서 플라스틱은 현대의 산업 발전에 커다란 역할을 해왔습니다. 자동차 및 전기, 전자 뿐만 아니라 항공 우주 산업까지,
+                                플라스틱의 다양한 적용은 현대 산업 사회의 발전과 그 방향을 같이 걸어가고 있습니다. 
                                 최근 '미세 플라스틱' 등의 환경 이슈로 인해, 플라스틱의 무용론이 제기되고 있긴 하지만, 플라스틱은 현대 산업 사회에서 반드시 필요한 소재가 틀림없습니다.
-                                이러한 산업 사회의 요구 사항와 고민을 미리 파악하여, 고객에게 최상의 솔루션을 제공하고자 PS KOREA 가 탄생하게 되었으며, 늘 고객과 함께 고민하고, 함께 노력하는 회사가 되겠습니다.
+                            </p>
+                            <p>    
+                                이러한 산업 사회의 요구 사항과 고민을 미리 파악하여, 고객에게 최상의 솔루션을 제공하고자 PS KOREA 가 탄생하게 되었으며, 
+                                늘 고객과 함께 고민하고,
+                                함께 노력하는 회사가 되겠습니다.
+                            </p>
+                            <p>
                                 국내의 플라스틱 원료 뿐만 아니라, 해외 유수의 글로벌 화학회사들의 플라스틱 원재료를 공급해 드림으로써, 고객에게는 최고의 품질로 대응해 드릴 것이며, 
-                                대학원생들을 비롯한 R&D 부문에 계신 분들께는 연구 활동에 부족함이 없도록 적극적인 지원을 아끼지 않겠습니다. 또한, 플라스틱 가공 관련해서, 
-                                소재의 특성을 고려한 가공 조건들에 대한 가이드라인을 제공해 드림으로써 고객과 피에스코리아 간의 Win-Win의 성공 모델을 만드는데 최선의 노력하겠습니다.
+                                대학원생들을 비롯한 R&D 부문에 계신 분들께는 연구 활동에 부족함이 없도록 적극적인 지원을 아끼지 않겠습니다. 
+                            </p>
+                            <p>
+                                또한, 플라스틱 가공 관련해서, 소재의 특성을 고려한 가공 조건들에 대한 가이드라인을 제공해 드림으로써 고객과 피에스코리아 간의 Win-Win의 성공 모델을 만드는데 최선을 다해 노력하겠습니다.
+                            </p>
+                            <p>
                                 피에스코리아의 '열정'과 '성실'이 여러 고객분들과 함께 한다면, 고객분들의 미래는 지금보다 훨씬 더 밝아질 거라 확신합니다. 감사합니다.
+                            </p>
+                            </div>
+                        <div lang="en"" class="lang">
+                            <p>
+                            In the rapidly changing industrial environment, plastics have played a huge role in the development of modern industry. Not only automotive and electrical, but also aerospace,
+                            various applications of plastics are developing in the direction of the improvment of modern industrial society.
+                            Depite of recent issues such as'micro-plastic', plastic must be a necessary material in the modern industrial society.
+                            </p>
+                            <p>
+                                PS KOREA was born to grasp the needs and concerns of these industrial societies and provide the best solutions to customers.
+                                By supplying plastic raw materials not only from domestic plastic raw materials, but also from overseas leading global chemical companies, we will respond to customers with the best quality.
+                                For graduates and those in the R&D sector, we will spare no effort to ensure that there is no shortage of research activities.
+                            </p>
+                            <p>
+                                In addition, with regard to plastic processing, we will do our best to create a Win-Win success model 
+                                between customers and PS Korea by providing guidelines on processing conditions that take into account the characteristics of materials.
+                            </p>
+                            <p>When our passion meet customers with sincerity, PS KOREA is confident that the future of the customers will be much brighter than now. Thank you.
                             </p>
                         </div>
                     </div>
                 </article>
-<div class="box">
-                <div class="explain" id="explain">
-                    <h1>P R O D U C T S</h1>
-                </div>
-                <div class="click" id="products">
-                    <div class="products">
-                        <a href="#about" title="알아보기"></a>
-                        <h5>AUTOMOTIVE</h5>
-                    </div>
-                    <div class="products">
-                        <a href="#about" title="알아보기"></a>
-                        <h5>ELECTRONIC </h5>
-                    </div>
-                    <div class="products">
-                        <a href="#about" title="알아보기"></a>
-                        <h5>MEDICAL</h5>
-                    </div>
-                    <div class="products">
-                        <a href="#about" title="알아보기"></a>
-                        <h5>BIODEGRADABLE</h5>
-</div>
+                <div class="explain">
+                    <h1 id="explain">P R O D U C T S / C O L L A B S</h1>
+                    <div class="container flex center">
+                        <div class="products" id="products">
+                            <div class="link" title="알아보기">
+                                <div class="popup">
+                                    <div>
+                                        <a href="https://www.lgchem.com/product/PD00000013" target="_blank">LG화학</a>
+                                        <a href="http://www.hyosungchemical.com/kr/business/pu_intro.do" target="_blank">효성화학</a>
+                                        <a href="http://www.kpic.co.kr/hp/kr/product/olefin/propylene.asp" target="_blank">대한유화</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>GENERAL PURPOSE PLASTIC</h5>
+                        </div>
+                    
+                        <div class="products">
+                            <div class="link" title="알아보기">
+                                <div class="popup">
+                                    <div>
+                                        <a href="https://www.basf.com/kr/en/products/automotive-and-transportation.html" target="_blank">BASF</a>
+                                        <a href="https://corporate.evonik.com/en/products" target="_blank">EVONIK</a>
+                                        <a href="https://www.ems-group.com/en/products-markets/products/ems-grivory/" target="_blank">EMS</a>
+                                        <a href="http://www.hyundai-am.com/" target="_blank">현대첨단소재</a>
+                                        <a href="https://akro-plastic.com/plastic-solutions/" target="_blank">AKRO</a>
+                                        <a href="https://www.t-umg.com/en/products_tpc/2_list_detail.html" target="_blank">UMG</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>ENGINEERING PLASTIC / SUPER EP </h5>
+                        </div>
+                        <div class="products">
+                            <div class="link" title="알아보기">
+                                <div class="popup">
+                                    <div>
+                                        <a href="https://www.m-chemical.co.jp/en/products/field/resin/index.html" target="_blank">MITSUBISHI</a>
+                                        <a href="https://bio-fed.com/our-biomaterials/" target="_blank">서원바이오</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>MEDICAL</h5>
+                        </div>
+                        <div class="products">
+                            <div class="link" title="알아보기">
+                                <div class="popup">
+                                    <div>
+                                        <a href="https://bio-fed.com/" target="_blank">BIO-FED</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>BIODEGRADABLE</h5>
+                        </div>
                     </div>
                 </div>
 <div class="mask">
@@ -608,50 +667,66 @@ a:active {
                     <h1>S E R V I C E</h1>
                 </div>
                 <div class="service r a" id="service_1">
-                    <img src="/Test/img/wmlab.jpg" height="400">
+                    <img src="/img/wmlab.jpg" height="400">
                     <div>
-                        <h2>
+                        <h2 lang="en" class="lang">
                             R&D SUPPORTS
                         </h2>
-                        <p>
+                        <h2 lang="kr" class="lang">
+                            R&D 지원
+                        </h2>
+                        <p lang="en" class="lang">
                             PS KOREA supports post secondary students and researchers who need plastic material of global chemical companies.
-                                Generally, it is challenging for them to acquire sample material of global chemical companies.
-                                Though, with PS KOREA, you can imagine more professional researches even with a small amount of material.
-                                From now on, enjoy your reserach.
-                                피에스코리아는 대학원생들과 연구진들의 더 혁신적인 연구를
-                                위해 국내외 화학 업체의 플라스틱 재료를 지원해줄 수 있습니다.
-                                이제 저희 PS KOREA와 더 차별화 된 연구를 진행해보세요.
-            
-                            </p>
+                            Generally, it is challenging for them to acquire sample material of global chemical companies.
+                            Though, with PS KOREA, you can imagine more professional researches even with a small amount of material.
+                            From now on, enjoy your reserach.
+                        </p>
+                        <p lang="kr" class="lang">
+                            피에스코리아는 대학원생들과 연구진들의 더 혁신적인 연구를
+                            위해 국내외 화학 업체의 플라스틱 재료를 지원해줄 수 있습니다.
+                            이제 저희 PS KOREA와 더 차별화 된 연구를 진행해보세요.
+                        </p>
                     </div>
                 </div>
                 <div class="service l b" id="service_2">
-                    <img src="/Test/img/cr1.jpg" height="400">
+                    <img src="/img/cr1.jpg" height="400">
                     <div>
-                        <h2>
+                        <h2 lang="en" class="lang">
                             PATENT SERVICE
                         </h2>
-                            <p>PS KOREA supports any plastic processing companies to protectc their own novel techniques.</li> 
-                                We support their patent application and compyrights with an expert patent agent.</li>
-                                피에스코리아는 국내외 플라스틱 가공기업의 혁신적인 기술을 보완할 수 있도록 특허사업을 도와드립니다.</li>
+                        <h2 lang="kr" class="lang">
+                            특허 지원
+                        </h2>
+                            <p lang="en" class="lang">
+                                PS KOREA supports any plastic processing companies to protectc their own novel techniques.
+                                We support their patent application and compyrights with an expert patent agent.
+                            </p>
+                            <p lang="kr" class="lang">
+                                피에스코리아는 국내외 플라스틱 가공기업의 혁신적인 기술을 보완할 수 있도록 특허사업을 도와드립니다.
                                 특허권과 저작권 의뢰는 전문 변리사가 함께 나서 해결 해 드립니다.</li>
                             </p>
                     </div>
                 </div>
                 <div class="service r c" id="service_3">
                     <div>
-                        <h2>
+                        <h2 lang="en" class="lang">
                             PLASTIC PROCESSING SUPPORTS
                         </h2>
-                            <p>When plastic processing, it is key to secure injection and extrusion.
-                                PS KOREA enables technical supports for any plastic processing
-                                to support injection and extrusion of plastic.
-                                플라스틱 가공 기술 중 사출과 압출은 필수적입니다.
-                                저희 피에스코리아는 중소기업의 더 나은 사출과 압출 과정을 위해 
-                                기술지원이 가능합니다.
-                            </p>
+                        <h2 lang="kr" class="lang">
+                            플라스틱 가공 기술 지원
+                        </h2>
+                        <p lang="en" class="lang">
+                            When plastic processing, it is key to secure injection and extrusion.
+                            PS KOREA enables technical supports for any plastic processing
+                            to support injection and extrusion of plastic.
+                        </p>
+                        <p lang="kr" class="lang">
+                            플라스틱 가공 기술 중 사출과 압출은 필수적입니다.
+                            저희 피에스코리아는 중소기업의 더 나은 사출과 압출 과정을 위해 
+                            기술지원이 가능합니다.
+                        </p>
                     </div>
-                    <img src="/Test/img/rd.jpg" height="400">
+                    <img src="/img/rd.jpg" height="400">
                 </div>
 </div>
             <div class="newbg">
@@ -662,150 +737,175 @@ a:active {
                 <div class="room" id=room>
                         <div class="news a" id="news_a">
                             <a target="_blank" href="https://plastics-rubber.basf.com/global/en/performance_polymers/products/ultramid.html">
-                                <img src="/Test/img/n1.png" width="400" height="240">
+                                <img src="/img/n1.png" width="400" height="240">
                             </a>
                             <h2>
                                 BASF:  Ultramid® in the Electrical and Electronics Sector
                             </h2>
-                            <p>
-                                Ultramid는 전력 공학, 전자 및 가정용 기술 등 거의 모든 산업 분야에서 사용되는 신개념적인 재료입니다.
+                            <p lang="en" class="lang">
+                               BASF's Ultramid is a innovative material used in almost all industries including power engineering, electronics and household technology. 
+                            </p>
+                            <p lang="kr" class="lang">
+                                Ultramid는 전력 공학, 전자 및 가정용 기술 등 거의 모든 산업 분야에서 사용되는 BASF의 신개념적인 재료입니다.
                             </p>
                         </div>
                         <div class="news b" id="news_b">
                             <a target="_blank" href="https://www.dupont.com/news/dupont-businesses-band-together-to-produce-hand-sanitizer.html">
-                                <img src="/Test/img/n2.png" width="400" height="240">
+                                <img src="/img/n2.png" width="400" height="240">
                             </a>
                             <h2>
                                 DUPONT:   Dupont Businesses Band Together to Make Hand Sanitizer
                             </h2>
-                            <p>
-                               Dupont가 수많은 요청에 응하고자 세계 글로벌 기업들과 손을 잡고 지금껏 만들어보지 않던 새 제품을 고안해냈습니다. 바로, Dupont만의 손 소독제.  
+                            <p lang="kr" class="lang">
+                               Dupont가 세계 글로벌 기업들과 Dupont만의 혁신적인 손 소독제를 고안해냈습니다.  
+                            </p>
+                            <p lang="en" class="lang">
+                                To respond to numerous requests, Dupont has teamed up with global companies to produce new products that have never been made before which were Dupont's hand sanitizer.
                             </p>
                         </div>
                         <div class="news c" id="news_c">
                             <a href=" https://www.basf.com/kr/en/media/news-releases/asia-pacific/2020/05/ultrason_enables_new_series_of_dishes_bowls_from_daiwa.html">
-                                <img src="/Test/img/n3.png" width="400" height="240">
+                                <img src="/img/n3.png" width="400" height="240">
                             </a>
                             <h2>
                                 BASF:   BASF’s PPSU techniques for food containers enable Japanese schools have better dishes and bowls
                             </h2>
-                            <p>
+                            <p lang="kr" class="lang">
                                 BASF의 PPSU 기술은 일본의 학교가 더 가볍고 청결유지가 쉬우며 더 안성맞춤인 음식보관이 가능한 컨테이너를 만드는 데에 큰 기여를 하였습니다.
+                            </p>
+                            <p lang="en" class="lang">
+                                BASF's PPSU technology has helped Japanese schools have improved containers that are lighter, easier to maintain, and more suitable for food storage.
                             </p>
                         </div>
                         <div class="news d" id="news_d">
                             <a href="https://corporate.exxonmobil.com/Community-engagement/Sustainability-Report">
-                                <img src="/Test/img/n5.png" width="400" height="240">
+                                <img src="/img/n5.png" width="400" height="240">
                             </a>
                             <h2>
                                 EXXONMOBIL:   Sustainability Report
                             </h2>
-                            <p>
-                                ExxonMobil의 수용가능성 조사 리포트는 기업이 환경적으로, 사회적으로, 그리고 정부적으로 어떻게 기여했는지 묘사합니다.
+                            <p lang="en" class="lang">
+                                ExxonMobil's Sustainability Report shows how they have contributed  environmentally, socially and governmentally.
+                            </p>
+                            <p lang="kr" class="lang">
+                                ExxonMobil의 수용가능성 조사 리포트는 기업이 환경적으로, 사회적으로, 그리고 정부적으로 어떻게 기여했는지 보여줍니다.
                             </p>
                         </div>
                 </div>
 </div>
 </div>
                 <div class="map layout" id="about">
-                    <img src="/Test/img/tex1.png" width="350" height="70">
+                    <img src="/img/tex1.png" width="350" height="70">
                     <div class="container flex">
                         <div class="info">
                             <table>
                                 <tr>
-                                    <th>회사명</th>
-                                    <td>주식회사 피에스코리아</td>
+                                    <th>COMPANY</th>
+                                    <td>(주)피에스코리아 PS KOREA</td>
                                 </tr>
                                 <tr>
-                                    <th>대표이사</th>
-                                    <td>이호연</td>
+                                    <th>OWNER</th>
+                                    <td>이호연 Hoyeon Lee</td>
                                 </tr>
                                 <tr>
-                                    <th>연락처</th>
+                                    <th>TEL 1</th>
                                     <td>010-3744-9570</td>
                                 </tr>
                                 <tr>
-                                    <th>전자우편</th>
-                                    <td>sales@ps-korea.com</td>
+                                    <th>TEL 2</th>
+                                    <td>010-xxxx-xxxx</td>
                                 </tr>
                                 <tr>
-                                    <th>주소</th>
-                                    <td>
+                                    <th>EMAIL</th>
+                                    <tr>
+                                        <td colspan="2" lang="kr" class="lang">
+                                            제품 및 기술 관련 문의: hy.lee@ps-korea.com<br>
+                                            세금계산서 발행: sales@ps-korea.com<br>
+                                        </td>
+                                        <td colspan="2" lang="en" class="lang">
+                                            About Proucts & Techniques: hy.lee@ps-korea.com<br>
+                                            About Taxes: sales@ps-korea.com<br>
+                                        </td>
+                                    </tr>
+                                </tr>
+                                <tr>
+                                    <th>LOCATION</th>
+                                    <td colspan="2" lang="kr" class="lang">
                                         경기도 안양시 평촌동<br>
                                         호연빌딩 1004
+                                    </td>
+                                    <td colspan="2" lang="en" class="lang">
+                                        something something<br>
+                                        1234 1234
                                     </td>
                                 </tr>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="2">
-                                            PS코리아는 .....<br>
-                                            PS코리아는 .....<br>
-                                            PS코리아는 .....<br>
-                                            PS코리아는 .....<br>
-                                        </td>
+                                        <th>OUR BUSINESSES</th>
+                                        <tr>
+                                            <td colspan="2" lang="kr" class="lang">
+                                                플라스틱 가공 기술 및 R&D 지원<br>
+                                                특허 사업<br>
+                                                각 계열별 플라스틱 원료 지원<br>
+                                            </td>
+                                            <td colspan="2" lang="en" class="lang">
+                                                
+                                                Technical Supports for Plastic Supports & R&D<br>
+                                                Patent Service<br>
+                                                Supporting Raw Plastic Materials for Various Industries<br>
+                                            </td>
+                                        </tr>
                                     </tr>
                                 </tfoot>
                             </table>
                         </div>
                         <div class="kakao" id="yeji"></div>
                     </div>
-                </div>   
-                <div class="collabs" id="collabs">
-                    <h1>
-                        COLLABORATION
-                    </h1>
-                </div>                  
+                </div>    
                 <footer id="company">
                 <div class="layout">
                         <ol>
+                            <h3>Company</h3>
                             <li>
-                                <a href="#title">
-                                    <h3>COMPANY</h3>
-                                </a>
+                                <a href="#nothing">About Us</a>
                             </li>
                             <li>
-                                <a href="#nothing">ABOUT US</a>
-                            </li>
-                            <li>
-                                <a href="#about">LOCATION</a>
-                            </li>
-                            <li>
-                                <a href="#collabs">COLLABORATION</a>
+                                <a href="#about">Location</a>
                             </li>
                         </ol>
                         <ol>
                             <li>
                                 <a href="#explain">
-                                    <h3>PRODUCTS</h3>
+                                    <h3>Products</h3>
                                 </a>
                             </li>
-                            <li><a href="#explain">AUTOMOTIVE</a></li>
-                            <li><a href="#explain">ELECTRONIC</a></li>
-                            <li><a href="#explain">MEDICAL</a></li>
-                            <li><a href="#explain">BIODEGRADABLE</a></li>
+                            <li><a href="#explain">Automotive</a></li>
+                            <li><a href="#explain">Electronics</a></li>
+                            <li><a href="#explain">Medical</a></li>
+                            <li><a href="#explain">Bio-degradable</a></li>
                             </ol>
                         <ol>
                             <li>
                                 <a href="#help">
-                                    <h3>SERVICE</h3>
+                                    <h3>Service</h3>
                                 </a>
                             </li>
                             <li>
-                                <a href="#service_1">R&D SUPPORTS</a>
+                                <a href="#service_1">R&D Supports</a>
                             </li>
-                            <li><a href="#service_2">PATENT SERVICE</a></li>
-                            <li><a href="#service_3">PLASTIC PROCESSING SUPPORTS</a></li>
+                            <li><a href="#service_2">Patent Service</a></li>
+                            <li><a href="#service_3">Plastic Processing Supports</a></li>
                         </ol>
                         <ol>
+                            <h3>Newsroom</h3>
                             <li>
-                                <a href="#news">
-                                    <h3>NEWSROOM</h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#news">UPDATES ABOUT CHEMICAL INDUSTRIES</a>
+                                <a href="#news">View What's Happening in Chemical Industry</a>
                             </li>
                         </ol>
+                </div>
+                <div class="byme">
+                    Designed by Yeji Lee
+                        <br>yejidream14@gmail.com
                 </div>
                 </footer>
         <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2d5f1506a806e98b9b51ecb765853bd7"></script>
@@ -826,12 +926,14 @@ try {
             content : "<label>주식회사 피에스코리아<br>경기도 안양시 동안구 시민대로 327번길 7 대명글로벌비즈스퀘어 501</label>;"
         });
 
-        marker.setMap(map);
+    marker.setMap(map);
 
-        title.open(map, marker);
+    title.open(map, marker);
 } catch (e) {console.trace(e);
     throw "kakao.maps.Map exception";
 }
+
+document.querySelector("select[name=lang]").onchange = e => document.body.className = e.currentTarget.value;
         </script>
     </body>
 </html>
