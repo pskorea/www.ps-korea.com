@@ -19,7 +19,7 @@ body {
 }
 
 h1 {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, "맑은 고딕";
     margin: 0;
     padding: 80px 0 80px 0;
     text-align: center;
@@ -41,7 +41,7 @@ header {
     background-color:#ffffff;
     background-image: url("/img/lab.jpg");
     background-position: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, "맑은 고딕";
     color: #000000;
     height: 200px;
 }
@@ -97,7 +97,7 @@ header>ul {
 
 article {
     background-image: url("/img/poly.jpg");
-    font-family: "맑은고딕", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, "맑은 고딕";
     color: darkgreen;
     margin: 40px 0 0 0;
     padding: 50px 0;
@@ -120,7 +120,7 @@ ol {
 aside>.nothing {
     height: 60%; width: 60%;
     background-color: #ffffff;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, "맑은 고딕";
     text-shadow: 0px 2px 2px #aaaaaa;
     color:darkgreen;
     font-size: 30pt;
@@ -158,7 +158,7 @@ aside>img:nth-child(3) {
     text-shadow: 2px 2px 2px #000000;
     font-size: 15pt;
     margin: 50px 0;
-    font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif, "맑은 고딕";
 }
 
 .filter {
@@ -178,7 +178,7 @@ aside>img:nth-child(3) {
 
 .products {
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "맑은 고딕", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 15pt;
     padding: 70px 0 90px 0;
     margin: 0 1em;
@@ -195,7 +195,7 @@ aside>img:nth-child(3) {
     text-align: center;
     color:#ffffff;
     padding: 20px;
-    font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif, "맑은 고딕";
 }
 
 .products .link {
@@ -221,6 +221,7 @@ aside>img:nth-child(3) {
 
 .products .link a {
     display: block;
+    line-height: 1.5em;
 }
 
 .products:nth-child(1) .link {
@@ -394,14 +395,8 @@ aside>img:nth-child(3) {
     
 }
 
-.map .kakao {
-    flex: 1;
-    color: initial;
-    
-}
-
-.map:target {
-    transform: translateY(0);
+.map {
+    color: #ffffff;
 }
 
 .service.c p {
@@ -587,12 +582,8 @@ body.en :lang(kr).lang {
                             <p>
                                 피에스코리아의 '열정'과 '성실'이 여러 고객분들과 함께 한다면, 고객분들의 미래는 지금보다 훨씬 더 밝아질 거라 확신합니다. 감사합니다.
                             </p>
-                            <p>
-                                E. sales@ps-korea.com
-                                M. 010-3744-9570
-                            </p>
                         </div>
-                        <div lang="en"" class="lang">
+                        <div lang="en" class="lang">
                             <p>
                             In the rapidly changing industrial environment, plastics have played a huge role in the development of modern industry. Not only automotive and electrical, but also aerospace,
                             various applications of plastics are developing in the direction of the improvment of modern industrial society.
@@ -622,6 +613,7 @@ body.en :lang(kr).lang {
                                         <a href="https://www.lgchem.com/product/PD00000013" target="_blank">LG화학</a>
                                         <a href="http://www.hyosungchemical.com/kr/business/pu_intro.do" target="_blank">효성화학</a>
                                         <a href="http://www.kpic.co.kr/hp/kr/product/olefin/propylene.asp" target="_blank">대한유화</a>
+                                        <a href="https://www.t-umg.com/en/products_tpc/2_list_detail.html" target="_blank">UMG</a>
                                     </div>
                                 </div>
                             </div>
@@ -637,7 +629,6 @@ body.en :lang(kr).lang {
                                         <a href="https://www.ems-group.com/en/products-markets/products/ems-grivory/" target="_blank">EMS</a>
                                         <a href="http://www.hyundai-am.com/" target="_blank">현대첨단소재</a>
                                         <a href="https://akro-plastic.com/plastic-solutions/" target="_blank">AKRO</a>
-                                        <a href="https://www.t-umg.com/en/products_tpc/2_list_detail.html" target="_blank">UMG</a>
                                     </div>
                                 </div>
                             </div>
@@ -648,7 +639,7 @@ body.en :lang(kr).lang {
                                 <div class="popup">
                                     <div>
                                         <a href="https://www.m-chemical.co.jp/en/products/field/resin/index.html" target="_blank">MITSUBISHI</a>
-                                        <a href="https://bio-fed.com/our-biomaterials/" target="_blank">서원바이오</a>
+                                        <!--a href="https://bio-fed.com/our-biomaterials/" target="_blank">서원바이오</a-->
                                     </div>
                                 </div>
                             </div>
@@ -800,6 +791,16 @@ body.en :lang(kr).lang {
 </div>
                 <div class="map layout">
                     <img src="/img/tex1.png" width="350" height="70">
+                    <h3 lang="kr" class="lang">
+                        <p>문의</p>
+                        <p>- 전자우편: sales@ps-korea.com</p>
+                        <p>- 연락처: 010-3744-9570</p>
+                    </h3>
+                    <h3 lang="en" class="lang">
+                        <p>Contact.</p>
+                        <p>- E-mail: sales@ps-korea.com</p>
+                        <p> Mobile: +82-10-3744-9570</p>
+                    </h3>
                     <!--div class="container flex">
                         <div class="info">
                             <table>
@@ -908,34 +909,11 @@ body.en :lang(kr).lang {
                         </ol>
                 </div>
                 <div class="byme">
-                    Designed by Yeji Lee
-                        <br>yejidream14@gmail.com
+                    Designed by Yeji Lee<br>
+                    yejidream14@gmail.com
                 </div>
                 </footer>
-        <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2d5f1506a806e98b9b51ecb765853bd7"></script>
         <script>
-try {
-    const
-        pos = new kakao.maps.LatLng(37.3965365395623, 126.966121951265),
-        map = new kakao.maps.Map(document.getElementById("yeji"), {
-            center: pos,
-            level: 3
-        }),
-        marker = new kakao.maps.Marker({
-            position: pos,
-            clickable: false
-        }),
-        title = new kakao.maps.InfoWindow({
-            position : pos,
-            content : "<label>주식회사 피에스코리아<br>경기도 안양시 동안구 시민대로 327번길 7 대명글로벌비즈스퀘어 501</label>;"
-        });
-
-    marker.setMap(map);
-
-    title.open(map, marker);
-} catch (e) {console.trace(e);
-    throw "kakao.maps.Map exception";
-}
 
 document.querySelector("select[name=lang]").onchange = e => document.body.className = e.currentTarget.value;
         </script>
